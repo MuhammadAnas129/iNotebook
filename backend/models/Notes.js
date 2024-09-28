@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose
 
 const NotesSchema = new Schema({
+    user:{
+        //foren key User only see his own notes
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    },
     tital:{
         type: String,
         require: true
